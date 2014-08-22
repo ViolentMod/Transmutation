@@ -12,6 +12,8 @@ import violentninjad.transmutation.config.ConfigHandler;
 import violentninjad.transmutation.init.BlockInit;
 import violentninjad.transmutation.init.ItemInit;
 import violentninjad.transmutation.init.Recipes;
+import violentninjad.transmutation.init.TileEntityInit;
+import violentninjad.transmutation.net.PacketHandler;
 import violentninjad.transmutation.proxy.IProxy;
 import violentninjad.transmutation.reference.ProxyRef;
 import violentninjad.transmutation.util.OreDictRegister;
@@ -40,10 +42,13 @@ public class Transmutation
         ConfigHandler.init(new File(Loader.instance().getConfigDir(), "Transmutation" + File.separator + "Transmutation.cfg"));
         FMLCommonHandler.instance().bus().register(new ConfigHandler());
 
+        PacketHandler.init();
+
         OreDictRegister.init();
 
         ItemInit.init();
         BlockInit.init();
+        TileEntityInit.init();
 
     }
 

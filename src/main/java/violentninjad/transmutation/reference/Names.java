@@ -14,5 +14,15 @@ public class Names
     {
         public static final String DARK_MATTER = "darkMatterBlock";
         public static final String RED_MATTER = "redMatterBlock";
+        public static final String RED_MATTER_SOLAR = "redMatterSolar";
+        public static final String DARK_MATTER_SOLAR = "darkMatterSolar";
+    }
+
+    public static final class NBT
+    {
+        public static final String STATE = "teState";
+        public static final String CUSTOM_NAME = "CustomName";
+        public static final String DIRECTION = "teDirection";
+        public static final String OWNER = "owner";
     }
 }
