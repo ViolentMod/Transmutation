@@ -13,5 +13,8 @@ public class Recipes
     {
         CraftingHelper.standard(new ItemStack(ItemInit.darkMatter, 1), "aaa", "ada", "aaa", 'a', ItemInit.aeternalisFuel, 'd', Blocks.diamond_block);
         CraftingHelper.standard(new ItemStack(ItemInit.redMatter, 1), "aaa", "ddd", "aaa", 'a', ItemInit.aeternalisFuel, 'd', ItemInit.darkMatter);
+
+        CraftingHelper.standard(new ItemStack(BlockInit.redMatterBlock, 4), "   ", " rr", " rr", 'r', ItemInit.redMatter);
+        CraftingHelper.standard(new ItemStack(BlockInit.darkMatterBlock, 4), "   ", " dd", " dd", 'd', ItemInit.darkMatter);
     }
 }
