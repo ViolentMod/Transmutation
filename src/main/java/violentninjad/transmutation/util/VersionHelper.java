@@ -30,4 +30,21 @@ public class VersionHelper
         }
 
     }
+
+    public void getDownloads()
+    {
+        try
+        {
+            URLConnection connection = new URL("https://raw.githubusercontent.com/ViolentMod/VersionFiles/master/TransmutationDownloads.txt").openConnection();
+            connection.connect();
+            Scanner scan = new Scanner(connection.getInputStream());
+            String getDownloadLink = scan.nextLine();
+
+            scan.close();
+
+            LogHelper.info("Get the latest download of Transmutation at: " + getDownloadLink);
+        }catch(Exception e){
+
+        }
+    }
 }

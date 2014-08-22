@@ -45,6 +45,7 @@ public class Transmutation
     public void init(FMLInitializationEvent event)
     {
         new VersionHelper().getVersion();
+        new VersionHelper().getDownloads();
     }
 
     @Mod.EventHandler
