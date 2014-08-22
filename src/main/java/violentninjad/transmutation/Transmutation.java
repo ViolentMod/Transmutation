@@ -12,6 +12,7 @@ import violentninjad.transmutation.config.ConfigHandler;
 import violentninjad.transmutation.init.ItemInit;
 import violentninjad.transmutation.proxy.IProxy;
 import violentninjad.transmutation.reference.ProxyRef;
+import violentninjad.transmutation.util.VersionHelper;
 
 import java.io.File;
 
@@ -21,7 +22,7 @@ public class Transmutation
 
     public static final String MOD_ID = "transmutation";
     public static final String MOD_NAME = "Transmutation";
-    public static final String MOD_VERSION = "ALPHA";
+    public static final String MOD_VERSION = "1.7.10-ALPHA-01";
 
     @Mod.Instance
     public static Transmutation instance;
@@ -43,7 +44,7 @@ public class Transmutation
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-
+        new VersionHelper().getVersion();
     }
 
     @Mod.EventHandler
