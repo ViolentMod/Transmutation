@@ -11,6 +11,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import violentninjad.transmutation.config.ConfigHandler;
 import violentninjad.transmutation.init.BlockInit;
 import violentninjad.transmutation.init.ItemInit;
+import violentninjad.transmutation.init.Recipes;
 import violentninjad.transmutation.proxy.IProxy;
 import violentninjad.transmutation.reference.ProxyRef;
 import violentninjad.transmutation.util.OreDictRegister;
@@ -51,6 +52,8 @@ public class Transmutation
     {
         new VersionHelper().getVersion();
         new VersionHelper().getDownloads();
+
+        Recipes.initCraftingRecipes();
     }
 
     @Mod.EventHandler

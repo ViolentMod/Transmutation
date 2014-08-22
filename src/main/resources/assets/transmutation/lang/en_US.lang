@@ -1,5 +1,6 @@
 #Items
 item.transmutation:redMatter.name=Red Matter
 item.transmutation:darkMatter.name=Dark Matter
+item.transmutation:aeternalisFuel.name=Aeternalis Fuel
 #Creative Tabs
 itemGroup.transmutation=Transmutation

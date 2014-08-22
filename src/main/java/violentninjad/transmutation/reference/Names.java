@@ -7,5 +7,6 @@ public class Names
     {
         public static final String DARK_MATTER = "darkMatter";
         public static final String RED_MATTER = "redMatter";
+        public static final String AETERNALIS_FUEL = "aeternalisFuel";
     }
 }
