@@ -9,6 +9,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import violentninjad.transmutation.config.ConfigHandler;
+import violentninjad.transmutation.init.BlockInit;
 import violentninjad.transmutation.init.ItemInit;
 import violentninjad.transmutation.proxy.IProxy;
 import violentninjad.transmutation.reference.ProxyRef;
@@ -38,6 +39,7 @@ public class Transmutation
         FMLCommonHandler.instance().bus().register(new ConfigHandler());
 
         ItemInit.init();
+        BlockInit.init();
 
     }
 

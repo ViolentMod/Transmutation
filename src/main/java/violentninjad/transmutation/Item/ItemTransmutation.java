@@ -7,13 +7,14 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import violentninjad.transmutation.Transmutation;
+import violentninjad.transmutation.creativetab.TransmutationTab;
 
 public class ItemTransmutation extends Item
 {
     public ItemTransmutation()
     {
         super();
-        //this.setCreativeTab() will be here when I hav custom Creative Tabs!
+        this.setCreativeTab(TransmutationTab.tabTransmutation);
     }
 
     @Override

@@ -1,2 +1,4 @@
 #Items
 item.transmutation:redMatter.name=Red Matter
+#Creative Tabs
+itemGroup.transmutation=Transmutation
