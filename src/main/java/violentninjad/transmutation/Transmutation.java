@@ -8,6 +8,8 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import violentninjad.transmutation.client.gui.inventory.GuiHandler;
 import violentninjad.transmutation.config.ConfigHandler;
 import violentninjad.transmutation.init.BlockInit;
 import violentninjad.transmutation.init.ItemInit;
@@ -48,7 +50,7 @@ public class Transmutation
 
         ItemInit.init();
         BlockInit.init();
-        TileEntityInit.init();
+
 
     }
 
@@ -59,6 +61,9 @@ public class Transmutation
         new VersionHelper().getDownloads();
 
         Recipes.initCraftingRecipes();
+
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+        proxy.registerTileEntities();
     }
 
     @Mod.EventHandler

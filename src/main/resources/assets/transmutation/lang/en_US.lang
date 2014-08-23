@@ -6,5 +6,8 @@ item.transmutation:aeternalisFuel.name=Aeternalis Fuel
 tile.transmutation:redMatterBlock.name=Red Matter Block
 tile.transmutation:darkMatterBlock.name=Dark Matter Block
 tile.transmutation:redMatterSolar.name=Red Matter Solar Panel
+tile.transmutation:transmutationTable.name=Transmutation Table
 #Creative Tabs
 itemGroup.transmutation=Transmutation
+#Container
+container.transmutation:transmutationTable=Transmutation Table
