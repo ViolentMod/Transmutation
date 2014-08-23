@@ -14,6 +14,18 @@ import violentninjad.transmutation.reference.Names;
 public class TileEntityTransmutationTable extends TileEntityTransmutation implements IInventory
 {
     public static int TRANSTABLE_INVSIZE = 12;
+    public static int SLOT_1 = 0;
+    public static int SLOT_2 = 1;
+    public static int SLOT_3 = 2;
+    public static int SLOT_4 = 3;
+    public static int SLOT_5 = 4;
+    public static int SLOT_6 = 5;
+    public static int SLOT_7 = 6;
+    public static int SLOT_8 = 7;
+    public static int SLOT_9 = 8;
+    public static int SLOT_10 = 9;
+    public static int SLOT_11 = 10;
+    public static int SLOT_12 = 11;
 
     private ItemStack[] inventory;
 

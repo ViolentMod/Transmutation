@@ -2,9 +2,11 @@ package violentninjad.transmutation.inventory;
 //Copyright ViolentNInjaD 2014
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import violentninjad.transmutation.tileentity.TileEntityTransmutationTable;
 import violentninjad.transmutation.util.ItemHelper;
 
 public class ContainerTransmutation extends Container
