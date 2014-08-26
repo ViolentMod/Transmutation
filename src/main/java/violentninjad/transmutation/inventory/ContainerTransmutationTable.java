@@ -14,17 +14,17 @@ public class ContainerTransmutationTable extends ContainerTransmutation
     {
         this.tileEntityTransmutationTable = tileEntityTransmutationTable;
 
-        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_1,57, 57)); //Working - Middle Left
-        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_2,57, 18)); //Working - Top Left
-        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_3,57, 96)); //Working - Bottom Left
-        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_4,9, 57)); //Working - Furthest Left
-        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_6,99, 18)); //Working - Exact Center
-        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_7,99, 96)); //Working - Middle Left
-        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_8,99, 57)); //Working - Middle Bottom
-        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_9,201, 57)); //WIP
+        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_1,57, 57));
+        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_2,57, 18));
+        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_3,57, 96));
+        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_4,142, 18));
+        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_6,99, 18));
+        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_7,99, 96));
+        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_8,99, 57));
+        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_9,142, 96));
         this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_10,142, 57));
-        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_11,142, 18));
-        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_12,142, 96));
+        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_11,9, 57)); //Furthest Left
+        this.addSlotToContainer(new Slot(tileEntityTransmutationTable, tileEntityTransmutationTable.SLOT_12,201, 57)); //Furthest Right
 
         for (int inventoryRowIndex = 0; inventoryRowIndex < PLAYER_INVENTORY_ROWS; ++inventoryRowIndex)
         {

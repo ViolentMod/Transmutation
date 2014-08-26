@@ -23,7 +23,7 @@ import violentninjad.transmutation.util.VersionHelper;
 
 import java.io.File;
 
-@Mod(modid = Transmutation.MOD_ID, name = Transmutation.MOD_NAME, version = Transmutation.MOD_VERSION)
+@Mod(modid = Transmutation.MOD_ID, name = Transmutation.MOD_NAME, version = Transmutation.MOD_VERSION, dependencies = "required-after:EE3")
 public class Transmutation
 {
 
@@ -40,7 +40,6 @@ public class Transmutation
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-
         ConfigHandler.init(new File(Loader.instance().getConfigDir(), "Transmutation" + File.separator + "Transmutation.cfg"));
         FMLCommonHandler.instance().bus().register(new ConfigHandler());
 
@@ -50,7 +49,6 @@ public class Transmutation
 
         ItemInit.init();
         BlockInit.init();
-
 
     }
 

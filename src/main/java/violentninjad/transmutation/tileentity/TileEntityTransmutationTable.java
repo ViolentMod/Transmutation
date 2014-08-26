@@ -3,13 +3,19 @@ package violentninjad.transmutation.tileentity;
 //I knew how to do some of the code, but some of it I looked at @Pahimar's EE3 Source Code!
 //https://github.com/pahimar/Equivalent-Exchange-3/
 
+import com.pahimar.ee3.exchange.EnergyValueRegistry;
+import com.pahimar.ee3.exchange.WrappedStack;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.inventory.InventoryCraftResult;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import violentninjad.transmutation.reference.Names;
+import violentninjad.transmutation.util.LogHelper;
 
 public class TileEntityTransmutationTable extends TileEntityTransmutation implements IInventory
 {
@@ -26,6 +32,15 @@ public class TileEntityTransmutationTable extends TileEntityTransmutation implem
     public static int SLOT_10 = 9;
     public static int SLOT_11 = 10;
     public static int SLOT_12 = 11;
+
+    public static int currentEP;
+
+    public static ItemStack getStackInInput;
+    public static ItemStack getStackInTarget;
+    public float energy;
+
+    //public int inputStackSize = this.getStackInSlot(3).stackSize;
+    //public String inputName = this.getStackInSlot(3).getUnlocalizedName();
 
     private ItemStack[] inventory;
 
@@ -129,7 +144,7 @@ public class TileEntityTransmutationTable extends TileEntityTransmutation implem
     @Override
     public boolean isItemValidForSlot(int slotIndex, ItemStack itemStack)
     {
-        return false;
+        return !EnergyValueRegistry.getInstance().hasEnergyValue(new WrappedStack(itemStack));
     }
 
     @Override
@@ -173,7 +188,50 @@ public class TileEntityTransmutationTable extends TileEntityTransmutation implem
     @Override
     public void updateEntity()
     {
+        getStackInInput = this.getStackInSlot(10);
+        getStackInTarget = this.getStackInSlot(11);
 
+        for (int i = 8; i >= 0; i--)
+        {
+            if ((getStackInInput != null) && (EnergyValueRegistry.getInstance().hasEnergyValue(new WrappedStack(getStackInInput))))
+            {
+                float energyValue = EnergyValueRegistry.getInstance().getEnergyValue(new WrappedStack(getStackInInput)).getEnergyValue();
+                while (this.energy + energyValue <= 2000000.0F)
+                {
+                    getStackInInput.stackSize -= 1;
+                    this.energy += energyValue;
+
+                    if(getStackInInput.stackSize == 0)
+                    {
+                        setInventorySlotContents(i, null);
+                    }
+                }
+            }
+
+
+        }
+
+        if ((getStackInTarget == null) || (!EnergyValueRegistry.getInstance().hasEnergyValue(getStackInTarget)))
+        {
+            return;
+        }
+
+        float targetValue = EnergyValueRegistry.getInstance().getEnergyValue(new WrappedStack(getStackInTarget)).getEnergyValue();
+        if (this.energy >= targetValue)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                ItemStack stackSlot = this.getStackInSlot(11);
+                if (stackSlot == null)
+                {
+                    ItemStack stackToPut = getStackInTarget.copy();
+                    stackToPut.stackSize = 1;
+                    setInventorySlotContents(i, stackToPut);
+                    this.energy -= targetValue;
+                    return;
+                }
+            }
+        }
     }
 
 
