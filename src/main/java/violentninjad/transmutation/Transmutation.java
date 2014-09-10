@@ -55,8 +55,8 @@ public class Transmutation
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        new VersionHelper().getVersion();
-        new VersionHelper().getDownloads();
+        VersionHelper.getVersion();
+        VersionHelper.getDownloads();
 
         Recipes.initCraftingRecipes();
 
