@@ -9,7 +9,7 @@ import java.util.*;
 
 public class VersionHelper
 {
-    public void getVersion()
+    public static void getVersion()
     {
         try
         {
@@ -31,7 +31,7 @@ public class VersionHelper
 
     }
 
-    public void getDownloads()
+    public static void getDownloads()
     {
         try
         {
